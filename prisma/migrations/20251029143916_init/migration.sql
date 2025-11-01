@@ -1,0 +1,45 @@
+-- CreateTable
+CREATE TABLE "DistrictData" (
+    "id" SERIAL NOT NULL,
+    "fin_year" TEXT NOT NULL,
+    "month" TEXT NOT NULL,
+    "state_code" TEXT,
+    "state_name" TEXT,
+    "district_code" TEXT NOT NULL,
+    "district_name" TEXT NOT NULL,
+    "approved_labour_budget" DOUBLE PRECISION,
+    "average_wage_rate_per_day_per_person" DOUBLE PRECISION,
+    "average_days_of_employment_per_household" DOUBLE PRECISION,
+    "differently_abled_persons_worked" INTEGER,
+    "material_and_skilled_wages" DOUBLE PRECISION,
+    "number_of_completed_works" INTEGER,
+    "number_of_gps_with_nil_exp" INTEGER,
+    "number_of_ongoing_works" INTEGER,
+    "persondays_of_central_liability_so_far" DOUBLE PRECISION,
+    "sc_persondays" DOUBLE PRECISION,
+    "sc_workers_against_active_workers" DOUBLE PRECISION,
+    "st_persondays" DOUBLE PRECISION,
+    "st_workers_against_active_workers" DOUBLE PRECISION,
+    "total_adm_expenditure" DOUBLE PRECISION,
+    "total_exp" DOUBLE PRECISION,
+    "total_households_worked" INTEGER,
+    "total_individuals_worked" INTEGER,
+    "total_no_of_active_job_cards" INTEGER,
+    "total_no_of_active_workers" INTEGER,
+    "total_no_of_hhs_completed_100_days" INTEGER,
+    "total_no_of_jobcards_issued" INTEGER,
+    "total_no_of_workers" INTEGER,
+    "total_no_of_works_takenup" INTEGER,
+    "wages" DOUBLE PRECISION,
+    "women_persondays" DOUBLE PRECISION,
+    "percent_of_category_b_works" DOUBLE PRECISION,
+    "percent_of_expenditure_on_agri_works" DOUBLE PRECISION,
+    "percent_of_nrm_expenditure" DOUBLE PRECISION,
+    "percentage_payments_generated_within_15_days" DOUBLE PRECISION,
+    "remarks" TEXT,
+
+    CONSTRAINT "DistrictData_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateIndex
+CREATE UNIQUE INDEX "DistrictData_fin_year_month_district_code_key" ON "DistrictData"("fin_year", "month", "district_code");
